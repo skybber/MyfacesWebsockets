@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ds="http://deltaspike.apache.org/jsf"
+      >
+<h:head>
+</h:head>
+
+<h:body>
+
+		<ds:windowId/>
+
+		<f:view>
+
+		<h:form>
+		<f:websocket channel="dispatcherChannel" user="#{userBean.getUserId()}" scope="application" >
+			<p:ajax event="onlineNotifPushEvent"
+							onstart="console.log('## Push received!')"
+							listener="#{userBean.onNotification()}"
+							update="outp"
+							ignoreAutoUpdate="true"
+							global="false"/>
+			<!--
+			<p:ajax event="broadcastMsgPushOpenEvent"
+							listener="#{userBean.onNotification()}"
+							update="outp"
+							ignoreAutoUpdate="true"
+							global="false"/>
+			<p:ajax event="broadcastMsgPushCloseEvent"
+							listener="#{userBean.onNotification()}"
+							update="outp"
+							ignoreAutoUpdate="true"
+							global="false"/>
+			 -->
+		</f:websocket>
+		</h:form>
+
+		<p:panel id="outp">
+			<h:outputText value="#{userBean.getNotiCount()}"/>
+		</p:panel>
+
+		</f:view>
+</h:body>
+</html>

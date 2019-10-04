@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>myfaces-websocket-test</groupId>
+    <artifactId>myfaces-websocket-test</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>MyfacesWebsocketTest</name>
+    <description>MyfacesWebsocketTest</description>
+
+    <properties>
+				<openwebbeans.version>2.0.11</openwebbeans.version>
+				<deltaspike.version>1.9.1</deltaspike.version>
+				<org.hibernateframework.version>5.2.10.Final</org.hibernateframework.version>
+				<openwebbeans.version>2.0.11</openwebbeans.version>
+				<tomcat.version>9.0.17</tomcat.version>
+				<generateSourceMap>false</generateSourceMap>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>primefaces-maven-repository</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+				<dependency>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-atinject_1.0_spec</artifactId>
+					<version>1.0</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-jcdi_2.0_spec</artifactId>
+					<version>1.0.1</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-interceptor_1.2_spec</artifactId>
+					<version>1.0</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.geronimo.specs</groupId>
+					<artifactId>geronimo-annotation_1.3_spec</artifactId>
+					<version>1.0</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.apache.openwebbeans</groupId>
+					<artifactId>openwebbeans-el22</artifactId>
+					<version>${openwebbeans.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.openwebbeans</groupId>
+					<artifactId>openwebbeans-impl</artifactId>
+					<version>${openwebbeans.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.openwebbeans</groupId>
+					<artifactId>openwebbeans-jsf</artifactId>
+					<version>${openwebbeans.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.openwebbeans</groupId>
+					<artifactId>openwebbeans-resource</artifactId>
+					<version>${openwebbeans.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.openwebbeans</groupId>
+					<artifactId>openwebbeans-spi</artifactId>
+					<version>${openwebbeans.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.openwebbeans</groupId>
+					<artifactId>openwebbeans-tomcat7</artifactId>
+					<version>${openwebbeans.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.openwebbeans</groupId>
+					<artifactId>openwebbeans-web</artifactId>
+					<version>${openwebbeans.version}</version>
+				</dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-api</artifactId>
+            <version>2.3.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-impl</artifactId>
+            <version>2.3.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+
+				<dependency>
+				    <groupId>javax.validation</groupId>
+				    <artifactId>validation-api</artifactId>
+				    <version>2.0.1.Final</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.apache.deltaspike.cdictrl</groupId>
+					<artifactId>deltaspike-cdictrl-api</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.cdictrl</groupId>
+					<artifactId>deltaspike-cdictrl-owb</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.cdictrl</groupId>
+					<artifactId>deltaspike-cdictrl-servlet</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.core</groupId>
+					<artifactId>deltaspike-core-api</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.core</groupId>
+					<artifactId>deltaspike-core-impl</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.modules</groupId>
+					<artifactId>deltaspike-jsf-module-api</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.modules</groupId>
+					<artifactId>deltaspike-jsf-module-impl</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.modules</groupId>
+					<artifactId>deltaspike-partial-bean-module-api</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.modules</groupId>
+					<artifactId>deltaspike-partial-bean-module-impl</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.modules</groupId>
+					<artifactId>deltaspike-proxy-module-api</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.modules</groupId>
+					<artifactId>deltaspike-proxy-module-impl-asm</artifactId>
+					<version>${deltaspike.version}</version>
+					<scope>runtime</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.modules</groupId>
+					<artifactId>deltaspike-scheduler-module-api</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.modules</groupId>
+					<artifactId>deltaspike-scheduler-module-impl</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.modules</groupId>
+					<artifactId>deltaspike-servlet-module-api</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.deltaspike.modules</groupId>
+					<artifactId>deltaspike-servlet-module-impl</artifactId>
+					<version>${deltaspike.version}</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.quartz-scheduler</groupId>
+					<artifactId>quartz</artifactId>
+					<version>2.3.0</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.quartz-scheduler</groupId>
+					<artifactId>quartz-jobs</artifactId>
+					<version>2.3.0</version>
+				</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-jdk14</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+    </dependencies>
+
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat8-maven-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <port>9091</port>
+                    <contextFile>src/main/webapp/META-INF/context.xml</contextFile>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>jstl</artifactId>
+                        <version>1.2</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
